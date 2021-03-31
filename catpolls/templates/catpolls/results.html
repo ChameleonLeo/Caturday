@@ -1,0 +1,9 @@
+<h1>{{ catuestion.catuestion_text }}</h1>
+
+<ul>
+{% for cachoice in catuestion.cachoice_set.all %}
+    <li>{{ cachoice.cachoice_text }} -- {{ cachoice.cavotes }} vote{{ cachioce.cavotes|pluralize }}</li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'catpolls:detail' catuestion.id %}">Vote again?</a>

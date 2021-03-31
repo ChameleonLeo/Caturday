@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Caturday</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Site created for practice while studying">
+  <meta name="author" content="Ralenko S.">
+  <link rel="stylesheet" href="{% static 'css/default.css' %}">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <p><a href="/">CATURDAY ~^o.o^~</a></p>
+      </div>
+      <div class="login">
+        {% if not user.is_authenticated %}
+        <p><a href="">Log in</a></p>
+        {% elif user.is_authenticated %}
+        <p><a href="">Log out</a></p>
+        {% endif %}
+      </div>
+    </div>
+  </header>
+  <div class="mid-block">
+    <div class="container main">
+      <div class="content">
+        {% block content %}
+        {% endblock %}
+      </div>
+      <div class="sidebar">
+        <nav>
+        <ul>
+          {% if user.is_authenticated %}
+          <a href=""><li>Create new</li></a>
+          {% endif %}
+          <a href=""><li>Recent publications</li></a>
+          <a href=""><li>Funny stories</li></a>
+          <a href=""><li>Serious articles</li></a>
+          <a href=""><li>Archive of publications</li></a>
+        </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="container">
+      <p>© Zephyrius 2021</p>
+    </div>
+  </footer>
+</body>
+<html>

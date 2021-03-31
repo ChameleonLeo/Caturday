@@ -1,0 +1,19 @@
+{% extends 'catblogs/base.html' %}
+
+{% block content %}
+    <div class="post">
+        {% if catpost.publication_date %}
+            <div class="date">
+                <p>{{ catpost.publication_date }}</p>
+            </div>
+        {% endif %}
+        {% if user.is_authenticated %}
+        <a class="edit" href="{% url 'catpost_edit' pk=catpost.pk %}">edit</a>
+        {% endif %}
+        <br>
+        <br>
+        <h1>{{ catpost.catitle }}</h1>
+        <p>{{ catpost.catext|linebreaksbr }}</p>
+    </div>
+{% endblock %}
+

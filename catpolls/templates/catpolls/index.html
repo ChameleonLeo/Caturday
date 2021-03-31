@@ -1,0 +1,9 @@
+{% if latest_catuestion_list %}
+    <ul>
+    {% for catuestion in latest_catuestion_list %}
+    <li><a href="{% url 'catpolls:detail' catuestion.id %}">{{ catuestion.catuestion_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are avaliable.</p>
+{% endif %}
