@@ -1,23 +1,26 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.views import generic
 from .models import Catuestion, Cachoice
 
 
-def index(request):
-    latest_catuestion_list = Catuestion.objects.order_by('-publication_date')[:5]
-    context = {"latest_catquestion_list": latest_catuestion_list}
-    return render(request, "catpolls/index.html", context)
+class IndexView(generic.ListView):
+    template_name = 'catpolls/index.html'
+    context_object_name = 'latest_catuestion_list'
+
+    def get_queryset(self):
+        return Catuestion.objects.order_by('-pub_date')[:5]
 
 
-def detail(request, catuestion_id):
-    catuestion = get_object_or_404(Catuestion, pk=catuestion_id)
-    return render(request, 'catpolls/detail.html', {'catuestion': catuestion})
+class DetailView(generic.DetailView):
+    model = Catuestion
+    template_name = 'catpolls/detail.html'
 
 
-def results(request, catuestion_id):
-    catuestion = get_object_or_404(Catuestion, pk=catuestion_id)
-    return render(request, 'catpolls/results.html', {'catuestion': catuestion})
+class ResultsView(generic.DetailView):
+    model = Catuestion
+    tamplate_name = 'catpolls/results.html'
 
 
 def vote(request, catuestion_id):
