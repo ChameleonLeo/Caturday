@@ -1,10 +1,10 @@
 <h1>{{ catuestion.catuestion_text }}</h1>
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<form action="{%url 'catpolls:vote' catuestion.id %}" method="post">
+<form action="{% url 'catpolls:vote' catuestion.id %}" method="post">
 {% csrf_token %}
 {% for cachoice in catuestion.cachoice_set.all %}
-<input type="radio" name="choice" id="cachoice{{ forloop.counter }}" value="{{ cachoice.id }}" />
+<input type="radio" name="cachoice" id="cachoice{{ forloop.counter }}" value="{{ cachoice.id }}" />
 <label for="cachoice{{ forloop.counter }}">{{ cachoice.cachoice_text }}</label><br />
 {% endfor %}
 <br>
