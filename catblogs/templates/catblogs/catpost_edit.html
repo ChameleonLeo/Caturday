@@ -1,12 +1,18 @@
 {% extends 'catblogs/base.html' %}
 
 {% block content %}
-    <h2>New post</h2>
-    <br>
-    <form method="POST" class="post-form">{% csrf_token %}
-	{{ catform.as_p }}
-	<br>
-        <button type="submit" class="button">Publish</button>
-    </form>
+    <h2>Edit post</h2>
+    <div class="form">
+        <form method="POST" class="post-form">{% csrf_token %}
+            <div class="edit-title">
+                <p>Edit title: {{ catform.catitle }}</p>
+            </div>
+            <div class="edit-text">
+                <p>Edit text: {{ catform.catext }}</p>
+            </div>
+            <div class="button">
+                <button type="submit">Publish</button>
+            </div>
+        </form>
+    </div>
 {% endblock %}
-

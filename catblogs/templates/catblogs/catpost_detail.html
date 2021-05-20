@@ -1,19 +1,24 @@
 {% extends 'catblogs/base.html' %}
+{% load static %}
 
 {% block content %}
     <div class="post">
+        <h2>{{ catpost.catitle }}</h2>
+        <p>{{ catpost.catext|linebreaksbr }}</p>
+        <div class="container">
         {% if catpost.publication_date %}
             <div class="date">
                 <p>{{ catpost.publication_date }}</p>
             </div>
         {% endif %}
         {% if user.is_authenticated %}
-        <a class="edit" href="{% url 'catpost_edit' pk=catpost.pk %}">edit</a>
+            <div class="edit">
+
+                <a href="{% url 'catblogs:catpost_edit' pk=catpost.pk %}">
+                    <img src="{% static 'catblogs/images/img-pencil.png' %}"> edit
+                </a>
+            </div>
         {% endif %}
-        <br>
-        <br>
-        <h1>{{ catpost.catitle }}</h1>
-        <p>{{ catpost.catext|linebreaksbr }}</p>
+        </div>
     </div>
 {% endblock %}
-

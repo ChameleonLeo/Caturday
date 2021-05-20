@@ -22,9 +22,9 @@ def catpost_new(request):
             catpost.catauthor = request.user
             catpost.publication_date = timezone.now()
             catpost.save()
-            return redirect('catpost_detail', pk=catpost.pk)
+            return redirect('catblogs:catpost_detail', pk=catpost.pk)
     else:
-            catform = CatPostForm()
+        catform = CatPostForm()
     return render(request, 'catblogs/catpost_edit.html', {'catform': catform})
 
 
@@ -37,7 +37,7 @@ def catpost_edit(request, pk):
             catpost.catauthor = request.user
             catpost.publication_date = timezone.now()
             catpost.save()
-            return redirect('catpost_detail', pk=catpost.pk)
+            return redirect('catblogs:catpost_detail', pk=catpost.pk)
     else:
         catform = CatPostForm(instance=catpost)
     return render(request, 'catblogs/catpost_edit.html', {'catform': catform})

@@ -1,53 +1,56 @@
 {% load static %}
-<!DOCTYPE HTML>
+
 <html>
 <head>
-  <title>Caturday</title>
-  <meta charset="UTF-8">
-  <meta name="description" content="Site created for practice while studying">
-  <meta name="author" content="Ralenko S.">
-  <link rel="stylesheet" href="{% static 'css/default.css' %}">
+    <title>Blogs</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Site created for practice while studying">
+    <meta name="author" content="Ralenko S.">
+    <link rel="stylesheet" type="text/css" href="{% static 'catblogs/css/style.css' %}">
+    <link rel="icon" type="image" href="{% static 'catblogs/images/icon1.jpg' %}">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="logo">
-        <p><a href="/">CATURDAY ~^o.o^~</a></p>
-      </div>
-      <div class="login">
-        {% if not user.is_authenticated %}
-        <p><a href="">Log in</a></p>
-        {% elif user.is_authenticated %}
-        <p><a href="">Log out</a></p>
-        {% endif %}
-      </div>
+<div class="body-wrapper">
+    <header class="header">
+        <div class="header-wrapper">
+            <div class="logo">
+                <a href="/blogs">Every day is Caturday Blogs</a>
+            </div>
+            <div class="login">
+                {% if not user.is_authenticated %}
+                <p><a href="">Log in</a></p>
+                {% elif user.is_authenticated %}
+                <p><a href="">Log out</a></p>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <div class="content-wrapper">
+            <div class="main">
+                {% block content %}
+                {% endblock %}
+            </div>
+            <div class="sidebar">
+                <nav class="nav">
+                    <ul class="nav-ul">
+                        {% if user.is_authenticated %}
+                        <a href=""><li>Create new</li></a>
+                        {% endif %}
+                        <a href=""><li>Recent publications</li></a>
+                        <a href=""><li>Funny stories</li></a>
+                        <a href=""><li>Serious articles</li></a>
+                        <a href=""><li>Archive of publications</li></a>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </div>
-  </header>
-  <div class="mid-block">
-    <div class="container main">
-      <div class="content">
-        {% block content %}
-        {% endblock %}
-      </div>
-      <div class="sidebar">
-        <nav>
-        <ul>
-          {% if user.is_authenticated %}
-          <a href=""><li>Create new</li></a>
-          {% endif %}
-          <a href=""><li>Recent publications</li></a>
-          <a href=""><li>Funny stories</li></a>
-          <a href=""><li>Serious articles</li></a>
-          <a href=""><li>Archive of publications</li></a>
-        </ul>
-        </nav>
-      </div>
-    </div>
-  </div>
-  <footer>
-    <div class="container">
-      <p>© Zephyrius 2021</p>
-    </div>
-  </footer>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2021 Made by Chameleon Leonard ~^o.o^~</p>
+        </div>
+    </footer>
+</div>
 </body>
-<html>
+</html>

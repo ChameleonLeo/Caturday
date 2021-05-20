@@ -10,11 +10,9 @@ class CatPost(models.Model):
     creation_date = models.DateTimeField(default=timezone.now)
     publication_date = models.DateTimeField(blank=True, null=True)
 
-
     def publish(self):
         self.publication_date = timezone.now()
         self.save()
-
 
     def __str__(self):
         return self.catitle

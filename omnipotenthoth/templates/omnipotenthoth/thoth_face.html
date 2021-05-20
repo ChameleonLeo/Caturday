@@ -1,0 +1,12 @@
+{% extends 'omnipotenthoth/index.html' %}
+
+{% block content %}
+    <div class="tip-img">
+        <img class="img" src="{{ tip.image.url }}">
+    </div>
+
+    <div class="tip">
+        <p>Think hard and answer:</p>
+        <p class="phrase">{{ tip.tip_text }}</p>
+    </div>
+{% endblock %}

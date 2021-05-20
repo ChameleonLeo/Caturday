@@ -1,0 +1,44 @@
+{% load static %}
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Caturday</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'homepage/style.css' %}">
+    <link rel="icon" type="image" href="{% static 'homepage/images/icon1.jpg' %}">
+</head>
+<body>
+    <header class="header">
+        <div class="overlay">
+            <h1 class="header-title"><small>Every day is<br></small><big>Caturday</big></h1>
+        </div>
+    </header>
+
+    <section class="content">
+        <div class="card">
+            <img src="{% static 'homepage/images/seamless_back3.jpg' %}" class="card-image">
+            <h3 class="card-title"><a href="{% url 'thoth:tip_start' %}">Thoth</a></h3>
+            <p class="card-text">The power of omnipotent Thoth. Randomly gives you some advice or ask important ritoric
+              question for thinking about.</p>
+        </div>
+
+        <div class="card">
+            <img src="{% static 'homepage/images/seamless_back2.jpg' %}" class="card-image">
+            <h3 class="card-title"><a href="{% url 'catpolls:index' %}">Polls</a></h3>
+            <p class="card-text">Here we do not shy about expressing our thoughts. Real chance to be involved in common
+              catlife - taking part in votes.</p>
+        </div>
+
+        <div class="card">
+            <img src="{% static 'homepage/images/seamless_back1.jpg' %}" class="card-image">
+            <h3 class="card-title"><a href="{% url 'catblogs:catpost_list' %}">Blogs</a></h3>
+            <p class="card-text">Incredible stories from cool guys about their totaly inimitable lifes. Let's just enjoy
+              fairy tales or true stories.</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <h4 class="footer-author">My goal is to inspire you for good deeds. Meow! ~^o.o^~</h4>
+    </footer>
+</body>
+</html>

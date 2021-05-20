@@ -17,4 +17,5 @@ class CatuestionAdmin(admin.ModelAdmin):
     list_filter = ['publication_date']
     search_fileds = ['catuestion_text']
 
+
 admin.site.register(Catuestion, CatuestionAdmin)

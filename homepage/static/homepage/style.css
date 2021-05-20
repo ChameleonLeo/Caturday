@@ -1,0 +1,99 @@
+body, h1, h2, h3, h4, p, a {
+  margin: 0;
+  font-size:100%;
+  font-weight: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, Verdana, sans-serif;
+}
+
+.header {
+  height: 100vh;
+  background-color: #eee;
+  background: url(images/seamless_back.jpg) repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+.header-title {
+  font-size: 140px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin: auto;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .7);
+  display: flex;
+}
+
+.content {
+  font-size: 0;
+  margin: 90px auto 30px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 350px;
+  margin-bottom: 60px;
+  padding: 45px 45px;
+  display: inline-block;
+  box-shadow: 3px 3px 6px rgba(10, 10, 10, .4);
+}
+
+.card:hover {
+  background-color: #000;
+  color: #fff;
+  box-shadow: 5px 5px 8px rgba(10, 10, 10, .4);
+}
+
+.card:hover a{
+  color: #059611;
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.card a {
+  color: #000;
+  display: inline-block;
+}
+
+.card-text {
+  font-size: 16px;
+  text-align: justify;
+  text-indent: 30px;
+}
+
+.card-image {
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.footer {
+  height: 100px;
+  background-color: #000;
+  display: flex;
+}
+
+.footer-author {
+  color: #fff;
+  font-size: 20px;
+  margin: auto;
+}

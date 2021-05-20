@@ -6,4 +6,4 @@ class CatPostForm(forms.ModelForm):
 
     class Meta:
         model = CatPost
-        fields = ['catitle', 'catext',]
+        fields = ['catitle', 'catext']

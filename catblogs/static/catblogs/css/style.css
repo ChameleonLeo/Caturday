@@ -1,0 +1,233 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100vh;
+}
+body {
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+}
+.body-wrapper {
+  position: relative;
+  min-height: 100%;
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header {
+  background: linear-gradient(#f5ce64 30%, #fff);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  min-height: 60px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.header-wrapper {
+  width: 90%;
+  display: flex;
+  flex-wrap: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: bold;
+}
+.logo a {
+  text-decoration: none;
+  color: black;
+}
+
+.login {
+  border: 3px solid #fcd874;
+  border-radius: 10px;
+  border-style: outset;
+  font-size: 16px;
+  min-width: 72px;
+  min-height: 32px;
+  text-align: center;
+}
+.login:hover {
+  background-color: #f5ce64;
+}
+.login:active {
+  background: #fcce51;
+  border-style: inset;
+  }
+.login p {
+  margin: 9px 0;
+}
+.login a {
+  text-decoration: none;
+  color: black;
+}
+
+.content {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+.content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.main {
+  max-width: 800px;
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.main h1 {
+  padding: 10px;
+  font-size: 24px;
+  text-align: center;
+}
+
+/* post list page */
+.post h2 {
+  font-size: 18px;
+  padding: 20px;
+}
+.post h2 a {
+  text-decoration: none;
+  color: #000;
+}
+.post a:hover {
+  text-decoration: underline;
+  color: #e3a914;
+}
+.post h2 a:visited {
+  color: #e3a914;
+}
+.post-text {
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #fcd874;
+  border-style: outset;
+  border-radius: 10px;
+}
+
+.auth-date {
+  font-size: 14px;
+  text-align: center;
+  padding: 10px;
+}
+hr {
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #fff, #fcd874, #fff);
+  margin-bottom: 50px;
+}
+
+/* post detail page */
+.container {
+  padding: 20px;
+}
+.date {
+  display: inline-block;
+  font-size: 14px;
+}
+.edit {
+  float: right;
+}
+.edit img {
+  height: 12px;
+}
+.edit a {
+  text-decoration: none;
+  color: #4a3600;
+  font-size: 14px;
+}
+.edit a:hover {
+  text-decoration: none;
+}
+
+/* post edit page */
+.edit-title {
+  padding: 20px 0;
+}
+.edit-title input {
+  padding: 5px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  font-size: 16px;
+  width: 600px;
+}
+.edit-text {
+  padding: 20px 0;
+}
+.edit-text textarea {
+  padding: 10px;
+  font-size: 16px;
+  width: 600px;
+  height: 500px;
+}
+.button {
+  float: right;
+}
+
+.sidebar {
+  padding: 50px 0 50px 50px;
+  min-width: 250px;
+}
+.nav {
+  position: sticky;
+  top: 127px;
+  background: #ffefc7;
+  padding: 10px;
+  border: 3px solid #fcd874;
+  border-style: outset;
+  border-radius: 10px;
+}
+.nav-ul {
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: column;
+}
+nav a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  min-height: 32px;
+  text-align: right;
+}
+nav li {
+  list-style-type: none;
+  padding: 10px;
+  margin: 5px 0px;
+  border: 3px solid #fcce51;
+  border-style: outset;
+  border-radius: 10px;
+  background: linear-gradient(#f5ce64 10%, #fff);
+}
+nav li:hover {
+  background: #ffd874;
+}
+nav li:active {
+  background: #fcce51;
+  border-style: inset;
+}
+
+.footer p {
+  padding-top: 18px;
+  font-size: 14px;
+  color: #4a3600;
+}
+
+.footer-content {
+  background: #f5ce64;
+  text-align: center;
+  height: 50px;
+}

@@ -4,14 +4,10 @@
     <h1>Famous Cats tell their stories</h1>
     {% for catpost in catposts %}
         <div class="post">
-            <h2><a href="{% url 'catpost_detail' pk=catpost.pk %}">{{ catpost.catitle }}<a></h2>
-            <br>
-            <p>{{ catpost.catext|linebreaksbr }}</p>
-            <br>
+            <h2><a href="{% url 'catblogs:catpost_detail' pk=catpost.pk %}">{{ catpost.catitle }}</a></h2>
+            <p class="post-text">{{ catpost.catext|linebreaksbr }}</p>
             <p class="auth-date">Author: {{ catpost.catauthor }}. Published: {{ catpost.publication_date }} </p>
             <hr>
-            <br>
         </div>
     {% endfor %}
 {% endblock %}
-
