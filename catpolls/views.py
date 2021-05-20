@@ -8,7 +8,7 @@ from .models import Catuestion, Cachoice
 
 
 class IndexView(generic.ListView):
-    template_name = 'catpolls/index.html'
+    template_name = 'catpolls/list.html'
     context_object_name = 'latest_catuestion_list'
 
     def get_queryset(self):

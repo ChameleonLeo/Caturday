@@ -12,7 +12,7 @@
     <header class="header">
         <div class="header-wrapper">
             <div class="logo">
-                <a href="">Every day is <br>Caturday Polls</a>
+                <a href="/polls">Every day is <br>Caturday Polls</a>
             </div>
 
             <div class="nav-wrapper">
@@ -40,26 +40,8 @@
         </div>
     </header>
     <div class="content-wrapper">
-        <div class="image">
-            <img src="{% static 'catpolls/images/img20.jpg' %}">
-        </div>
-
-        <div class="question">
-            {% if latest_catuestion_list %}
-            <ul>
-            {% for catuestion in latest_catuestion_list %}
-            <li><a href="{% url 'catpolls:detail' catuestion.id %}">{{ catuestion.catuestion_text }}</a></li>
-            {% endfor %}
-            </ul>
-            {% else %}
-            <p>No polls are available.</p>
-            {% endif %}
-            <p>Here are another questions.</p>
-        </div>
-
-        <div class="paginator">
-            <p>Page n from m.</p>
-        </div>
+        {% block content %}
+        {% endblock %}
     </div>
     <footer class="footer">
         <div class="footer-content">

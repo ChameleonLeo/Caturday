@@ -1,12 +1,24 @@
-<h1>{{ catuestion.catuestion_text }}</h1>
-{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+{% extends 'catpolls/index.html' %}
+{% load static %}
 
-<form action="{% url 'catpolls:vote' catuestion.id %}" method="post">
-{% csrf_token %}
-{% for cachoice in catuestion.cachoice_set.all %}
-<input type="radio" name="cachoice" id="cachoice{{ forloop.counter }}" value="{{ cachoice.id }}" />
-<label for="cachoice{{ forloop.counter }}">{{ cachoice.cachoice_text }}</label><br />
-{% endfor %}
-<br>
-<input type="submit" value="Vote" />
-</form>
+{% block content %}
+    <div class="question">
+        <p>{{ catuestion.catuestion_text }}</p>
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    </div>
+
+    <div class="voting">
+        <form action="{% url 'catpolls:vote' catuestion.id %}" method="post">
+            {% csrf_token %}
+            {% for cachoice in catuestion.cachoice_set.all %}
+                <div class="choice">
+                    <input type="radio" name="cachoice" id="cachoice{{ forloop.counter }}" value="{{ cachoice.id }}" />
+                    <label for="cachoice{{ forloop.counter }}">{{ cachoice.cachoice_text }}</label><br />
+                </div>
+            {% endfor %}
+            <div class="button">
+                <input type="submit" value="Vote" />
+            </div>
+        </form>
+    </div>
+{% endblock %}

@@ -1,9 +1,20 @@
-<h1>{{ catuestion.catuestion_text }}</h1>
+{% extends 'catpolls/index.html' %}
+{% load static %}
 
-<ul>
-{% for cachoice in catuestion.cachoice_set.all %}
-    <li>{{ cachoice.cachoice_text }} -- {{ cachoice.cavotes }} vote{{ cachioce.cavotes|pluralize }}</li>
-{% endfor %}
-</ul>
+{% block content %}
+    <div class="question">
+        <p>{{ catuestion.catuestion_text }}</p>
+    </div>
 
-<a href="{% url 'catpolls:detail' catuestion.id %}">Vote again?</a>
+    <div class="results">
+        <ul>
+            {% for cachoice in catuestion.cachoice_set.all %}
+                <li>{{ cachoice.cachoice_text }} -- {{ cachoice.cavotes }} vote{{ cachioce.cavotes|pluralize }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="again">
+        <a href="{% url 'catpolls:detail' catuestion.id %}">Vote again?</a>
+    </div>
+{% endblock %}

@@ -131,6 +131,13 @@ hr {
   margin-bottom: 50px;
 }
 
+.paginator {
+  height: 25px;
+}
+.paginator p {
+  text-align: center;
+}
+
 /* post detail page */
 .container {
   padding: 20px;
