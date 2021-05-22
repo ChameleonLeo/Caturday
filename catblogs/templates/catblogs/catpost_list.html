@@ -1,16 +1,34 @@
 {% extends 'catblogs/base.html' %}
 
 {% block content %}
-    <h1>Famous Cats tell their stories</h1>
-    {% for catpost in catposts %}
+    {% if catposts %}
+        <h1>Famous Cats tell their stories</h1>
+        {% for catpost in catposts %}
+            <div class="post">
+                <h2><a href="{% url 'catblogs:catpost_detail' pk=catpost.pk %}">{{ catpost.catitle }}</a></h2>
+                <p class="post-text">{{ catpost.catext|linebreaksbr }}</p>
+                <p class="auth-date">Author: {{ catpost.catauthor }}. Published: {{ catpost.publication_date }} </p>
+                <hr>
+            </div>
+        {% endfor %}
+        {% if is_paginated %}
+            <div class="paginator">
+                <span class="page-links">
+                    {% if page_obj.has_previous %}
+                        <a class="pag-a" href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
+                    {% endif %}
+                    <span class="page-current">
+                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                    </span>
+                    {% if page_obj.has_next %}
+                        <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
+                    {% endif %}
+                </span>
+            </div>
+        {% endif %}
+    {% else %}
         <div class="post">
-            <h2><a href="{% url 'catblogs:catpost_detail' pk=catpost.pk %}">{{ catpost.catitle }}</a></h2>
-            <p class="post-text">{{ catpost.catext|linebreaksbr }}</p>
-            <p class="auth-date">Author: {{ catpost.catauthor }}. Published: {{ catpost.publication_date }} </p>
-            <hr>
+            <p class="post-text">Unfortunately, there is no posts in this category.</p>
         </div>
-    {% endfor %}
-    <div class="paginator">
-        <p>Page n from m.</p>
-    </div>
+    {% endif %}
 {% endblock %}

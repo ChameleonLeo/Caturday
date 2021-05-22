@@ -6,7 +6,9 @@
     </div>
 
     <div class="tip">
-        <p>Think hard and answer:</p>
+        {% if question %}
+            <p>Think hard and answer:</p>
+        {% endif %}
         <p class="phrase">{{ tip.tip_text }}</p>
     </div>
 {% endblock %}

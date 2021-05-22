@@ -46,6 +46,9 @@ body {
   color: black;
 }
 
+.username {
+  display: inline-block;
+}
 .login {
   border: 3px solid #fcd874;
   border-radius: 10px;
@@ -130,12 +133,12 @@ hr {
   background-image: linear-gradient(to right, #fff, #fcd874, #fff);
   margin-bottom: 50px;
 }
-
 .paginator {
-  height: 25px;
+  text-align: right;
+  padding: 0 10px;
 }
-.paginator p {
-  text-align: center;
+.paginator span a{
+  color: #e3a914;
 }
 
 /* post detail page */

@@ -1,0 +1,10 @@
+{% extends "general/main.html" %}
+
+{% block content %}
+    <div class="mess">
+        <p>You logged out.</p>
+    </div>
+    <div class="mess2">
+        <a href="{% url 'login'%}">Click here to login again.</a>
+    </div>
+{% endblock %}

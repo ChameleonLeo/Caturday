@@ -1,0 +1,21 @@
+{% extends 'catpolls/index.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="image">
+        <img src="{% static 'catpolls/images/img30.png' %}">
+    </div>
+
+    <div class="question-list">
+        {% if popular_catuestion_list %}
+            <ul>
+                {% for catuestion in popular_catuestion_list %}
+                    <li><a id="ques" href="{% url 'catpolls:detail' catuestion.id %}">{{ catuestion.catuestion_text }}</a>
+                        <br><a id="res" href="{% url 'catpolls:results' catuestion.id %}">See results</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No polls are available.</p>
+        {% endif %}
+    </div>
+{% endblock %}

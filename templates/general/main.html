@@ -1,0 +1,24 @@
+{% load static %}
+
+<html lang="en-us" >
+<head>
+    <title>Caturday</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'homepage/css/main.css' %}">
+</head>
+<body>
+<div class="body-wrapper">
+    <div id="header">
+        <div class="branding">
+          <h1><a href="/">Every day is Caturday</a></h1>
+        </div>
+    </div>
+    <div id="main">
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+    <div id="footer"></div>
+</div>
+</body>
+</html>

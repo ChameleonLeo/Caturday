@@ -10,11 +10,27 @@
         {% if latest_catuestion_list %}
             <ul>
                 {% for catuestion in latest_catuestion_list %}
-                    <li><a href="{% url 'catpolls:detail' catuestion.id %}">{{ catuestion.catuestion_text }}</a></li>
+                    <li><a id="ques" href="{% url 'catpolls:detail' catuestion.id %}">{{ catuestion.catuestion_text }}</a>
+                        <br><a id="res" href="{% url 'catpolls:results' catuestion.id %}">See results</a></li>
                 {% endfor %}
             </ul>
         {% else %}
             <p>No polls are available.</p>
         {% endif %}
     </div>
+    {% if is_paginated %}
+        <div class="paginator">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a class="pag-a" href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+                <span class="page-current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
 {% endblock %}

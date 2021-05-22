@@ -19,4 +19,7 @@ def rand_tip():
 
 def tip_next(request):
     tip = get_object_or_404(Tip, pk=rand_tip())
-    return render(request, 'omnipotenthoth/thoth_face.html', {'tip': tip})
+    question = False
+    if '?' in tip.tip_text:
+        question = True
+    return render(request, 'omnipotenthoth/thoth_face.html', {'tip': tip, 'question': question})
