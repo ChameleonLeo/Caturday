@@ -90,7 +90,7 @@ nav li {
 }
 
 .content-wrapper {
-  max-width: 800px;
+  max-width: 500px;
   display: flex;
   flex-flow: wrap;
   flex-direction: column;
@@ -108,10 +108,19 @@ nav li {
 
 .question-list ul {
   list-style-type: none;
-  padding-bottom: 30px;
+  padding: 10px;
 }
 .question-list li {
-  padding: 20px 0;
+  padding: 10px 0;
+  min-height: 3em;
+}
+.li-block1 {
+  display: inline-block;
+  width: 70%;
+}
+.li-block2 {
+  display: inline-block;
+  float: right;
 }
 #ques {
   color: #000;
@@ -126,7 +135,7 @@ nav li {
   padding-top: 10px;
 }
 .paginator {
-  padding: 0 10px;
+  padding: 20px 0;
   text-align: center;
 }
 .paginator span a{
@@ -136,7 +145,7 @@ nav li {
 /* polls detail page */
 .question {
   font-size: 24px;
-  padding: 20px;
+  padding: 20px 0;
 }
 .voting {
   font-size: 18px;

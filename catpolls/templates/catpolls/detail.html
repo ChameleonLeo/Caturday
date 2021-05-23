@@ -2,6 +2,11 @@
 {% load static %}
 
 {% block content %}
+    <div class="image">
+        <img class="img" src="{{ catuestion.catuestion_image.url }}">
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    </div>
+
     <div class="question">
         <p>{{ catuestion.catuestion_text }}</p>
         {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}

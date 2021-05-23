@@ -5,10 +5,22 @@
     <h1>{{ catuestion.catuestion_text }}</h1>
     {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-    <form action="" method="post">
+    <form method="POST">
     {% csrf_token %}
+    <div class="">
+        <table>
+            {{ form.as_table }}
+        </table>
+    </div>
 
-    <br>
-    <input type="submit" value="Publish" />
+    <div class="">
+        <p>{{ CreateChoice.cachoice_text }}</p>
+        <p>{{ PollChoiceFormSet }}</p>
+    </div>
+
+    <div class="">
+        <input class="button" type="submit" value="Publish" />
+    </div>
+
     </form>
 {% endblock %}

@@ -16,6 +16,7 @@ body {
   flex-flow: wrap;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 }
 
 .header {
@@ -23,7 +24,7 @@ body {
   position: sticky;
   top: 0;
   width: 100%;
-  min-height: 60px;
+  min-height: 70px;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -46,153 +47,57 @@ body {
   color: black;
 }
 
-.username {
-  display: inline-block;
-}
 .login {
+
+}
+.user {
+  display: inline-block;
+  padding: 12px;
+}
+.button {
+  display: inline-block;
+  padding: 9px 12px;
   border: 3px solid #fcd874;
   border-radius: 10px;
   border-style: outset;
   font-size: 16px;
-  min-width: 72px;
-  min-height: 32px;
   text-align: center;
 }
-.login:hover {
+.button:hover {
   background-color: #f5ce64;
 }
-.login:active {
+.button:active {
   background: #fcce51;
   border-style: inset;
   }
-.login p {
-  margin: 9px 0;
-}
-.login a {
+.button a {
   text-decoration: none;
   color: black;
 }
 
+
+
 .content {
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-}
-.content-wrapper {
+  padding: 50px 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
-
 .main {
-  max-width: 800px;
-  display: flex;
-  flex-flow: wrap;
-  flex-direction: column;
-  justify-content: space-between;
+  max-width: 750px;
+  padding: 0 40px;
 }
 .main h1 {
-  padding: 10px;
+  padding: 0 0 20px;
   font-size: 24px;
   text-align: center;
 }
 
-/* post list page */
-.post h2 {
-  font-size: 18px;
-  padding: 20px;
-}
-.post h2 a {
-  text-decoration: none;
-  color: #000;
-}
-.post a:hover {
-  text-decoration: underline;
-  color: #e3a914;
-}
-.post h2 a:visited {
-  color: #e3a914;
-}
-.post-text {
-  font-size: 16px;
-  padding: 10px;
-  border: 1px solid #fcd874;
-  border-style: outset;
-  border-radius: 10px;
-}
-
-.auth-date {
-  font-size: 14px;
-  text-align: center;
-  padding: 10px;
-}
-hr {
-  border: 0;
-  height: 1px;
-  background: #333;
-  background-image: linear-gradient(to right, #fff, #fcd874, #fff);
-  margin-bottom: 50px;
-}
-.paginator {
-  text-align: right;
-  padding: 0 10px;
-}
-.paginator span a{
-  color: #e3a914;
-}
-
-/* post detail page */
-.container {
-  padding: 20px;
-}
-.date {
-  display: inline-block;
-  font-size: 14px;
-}
-.edit {
-  float: right;
-}
-.edit img {
-  height: 12px;
-}
-.edit a {
-  text-decoration: none;
-  color: #4a3600;
-  font-size: 14px;
-}
-.edit a:hover {
-  text-decoration: none;
-}
-
-/* post edit page */
-.edit-title {
-  padding: 20px 0;
-}
-.edit-title input {
-  padding: 5px;
-  border: 1px solid #000;
-  border-radius: 10px;
-  font-size: 16px;
-  width: 600px;
-}
-.edit-text {
-  padding: 20px 0;
-}
-.edit-text textarea {
-  padding: 10px;
-  font-size: 16px;
-  width: 600px;
-  height: 500px;
-}
-.button {
-  float: right;
-}
-
 .sidebar {
-  padding: 50px 0 50px 50px;
-  min-width: 250px;
+  padding: 0 40px;
 }
 .nav {
+  width: 220px;
   position: sticky;
   top: 127px;
   background: #ffefc7;
@@ -230,12 +135,119 @@ nav li:active {
   border-style: inset;
 }
 
+/* post list page */
+.post h2 {
+  font-size: 18px;
+  padding: 20px;
+}
+.post h2 a {
+  text-decoration: none;
+  color: #000;
+}
+.post a:hover {
+  text-decoration: underline;
+  color: #e3a914;
+}
+.post h2 a:visited {
+  color: #e3a914;
+}
+.post-text {
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #fcd874;
+  border-style: outset;
+  border-radius: 10px;
+}
+
+.auth-date {
+  font-size: 14px;
+  text-align: center;
+  padding: 10px;
+}
+hr {
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #fff, #fcd874, #fff);
+  margin-bottom: 30px;
+}
+.paginator {
+  text-align: center;
+}
+.paginator span a{
+  color: #e3a914;
+}
+
+/* post detail page */
+.container {
+  padding: 20px;
+}
+.date {
+  display: inline-block;
+  font-size: 14px;
+  float: right;
+}
+.edit {
+  float: left;
+}
+.edit img {
+  height: 12px;
+}
+.edit a {
+  text-decoration: none;
+  color: #4a3600;
+  font-size: 14px;
+}
+.edit a:hover {
+  text-decoration: none;
+}
+
+/* post edit page */
+.edit-title {
+  padding: 20px 0;
+}
+.edit-title input {
+  padding: 5px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  font-size: 16px;
+  width: 600px;
+}
+.edit-text {
+  padding: 20px 0;
+}
+.edit-text textarea {
+  padding: 10px;
+  font-size: 16px;
+  width: 600px;
+  height: 500px;
+}
+button {
+  float: right;
+  padding: 9px 12px;
+  background: linear-gradient(#f5ce64 10%, #fff);
+  border: 3px solid #fcd874;
+  border-radius: 10px;
+  border-style: outset;
+  font-size: 16px;
+  text-align: center;
+}
+button:hover {
+  background: #f5ce64;
+}
+button:active {
+  background: #fcce51;
+  border-style: inset;
+}
+
+.footer {
+  width: 100%;
+}
 .footer p {
   padding-top: 18px;
   font-size: 14px;
   color: #4a3600;
 }
-
 .footer-content {
   background: #f5ce64;
   text-align: center;

@@ -13,7 +13,7 @@ class CatuestionAdmin(admin.ModelAdmin):
             (None, {'fields': ['catuestion_text']}),
             ]
     inlines = [CachoiceInline]
-    list_display = ('catuestion_text', 'publication_date', 'was_published_recently')
+    list_display = ('catuestion_text', 'publication_date', 'catuestion_image', 'was_published_recently')
     list_filter = ['publication_date']
     search_fileds = ['catuestion_text']
 

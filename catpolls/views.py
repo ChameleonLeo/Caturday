@@ -7,6 +7,8 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
+from . import forms
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import Catuestion, Cachoice
 
