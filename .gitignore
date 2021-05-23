@@ -1,6 +1,6 @@
 # Environment ignored files
-.env
-.venv
+*/.env
+*/.venv
 env/
 venv/
 ENV/
