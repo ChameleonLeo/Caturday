@@ -10,8 +10,8 @@
         {% if popular_catuestion_list %}
             <ul>
                 {% for catuestion in popular_catuestion_list %}
-                    <li><a id="ques" href="{% url 'catpolls:detail' catuestion.id %}">{{ catuestion.catuestion_text }}</a>
-                        <br><a id="res" href="{% url 'catpolls:results' catuestion.id %}">See results</a></li>
+                    <li><p class="li-block1"><a id="ques" href="{% url 'catpolls:detail' catuestion.id %}">{{ catuestion.catuestion_text }}</a></p>
+                        <p class="li-block2"><a id="res" href="{% url 'catpolls:results' catuestion.id %}">See results</a></p></li>
                 {% endfor %}
             </ul>
         {% else %}

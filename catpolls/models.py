@@ -7,6 +7,7 @@ from django.utils import timezone
 class Catuestion(models.Model):
     catuestion_text = models.CharField(max_length=200)
     publication_date = models.DateTimeField('date published')
+    catuestion_image = models.ImageField(upload_to='polls-img/')
 
     def __str__(self):
         return self.catuestion_text

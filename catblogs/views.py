@@ -71,6 +71,18 @@ class ArticlePostListView(generic.ListView):
         ).order_by('publication_date')
 
 
+class MyPostListView(generic.ListView):
+    template_name = 'catblogs/catpost_list.html'
+    context_object_name = 'catposts'
+    model = CatPost
+    paginate_by = 3
+
+    def get_queryset(self):
+        return CatPost.objects.filter(
+            catauthor=self.request.user
+        ).order_by('publication_date')
+
+
 def catpost_detail(request, pk):
     catpost = get_object_or_404(CatPost, pk=pk)
     return render(request, 'catblogs/catpost_detail.html', {'catpost': catpost})

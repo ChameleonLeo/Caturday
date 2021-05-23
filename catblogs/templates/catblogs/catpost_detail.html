@@ -6,17 +6,16 @@
         <h2>{{ catpost.catitle }}</h2>
         <p>{{ catpost.catext|linebreaksbr }}</p>
         <div class="container">
-        {% if catpost.publication_date %}
-            <div class="date">
-                <p>{{ catpost.publication_date }}</p>
-            </div>
-        {% endif %}
-        {% if user.is_authenticated %}
+            {% if user.is_authenticated and request.user == catpost.catauthor %}
             <div class="edit">
-
                 <a href="{% url 'catblogs:catpost_edit' pk=catpost.pk %}">
-                    <img src="{% static 'catblogs/images/img-pencil.png' %}"> edit
+                    <img src="{% static 'catblogs/images/img-pencil.png' %}"> edit post
                 </a>
+            </div>
+            {% endif %}
+            {% if catpost.publication_date %}
+            <div class="date">
+                <p>{{ catpost.catauthor }}. {{ catpost.publication_date }}</p>
             </div>
         {% endif %}
         </div>
