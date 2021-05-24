@@ -127,6 +127,11 @@ nav li {
   text-decoration: none;
   font-size: 24px;
 }
+#ques:hover {
+  color: #006600;
+  text-decoration: underline;
+  font-size: 24px;
+}
 #res {
   color: green;
   text-decoration: underline;

@@ -61,18 +61,20 @@ body {
 
 .card:hover a{
   color: #059611;
+  text-decoration: underline;
 }
 
 .card-title {
   font-size: 24px;
   font-weight: 500;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
 .card a {
   color: #000;
   display: inline-block;
+  text-decoration: none;
 }
 
 .card-text {
