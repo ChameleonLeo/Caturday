@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Thoth</title>
-    <link rel="stylesheet" href="{% static 'omnipotenthoth/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'omnipotenthoth/css/style.css' %}">
     <link rel="icon" type="image" href="{% static 'omnipotenthoth/images/icon1.jpg' %}">
 </head>
 <body>
     <div class="body-wrapper">
 
         <div class="header">
-            <p class="logo">Every day is Caturday Tips</p>
+            <a href="/" class="logo">Every day is Caturday Tips</a>
             <a href="{% url 'thoth:tip_next' %}"><div class="button">Next tip</div></a>
         </div>
 

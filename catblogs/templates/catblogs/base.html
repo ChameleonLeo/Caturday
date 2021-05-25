@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="description" content="Site created for practice while studying">
     <meta name="author" content="Ralenko S.">
-    <link rel="stylesheet" href="{% static 'catblogs/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'catblogs/css/style.css' %}">
     <link rel="icon" type="image" href="{% static 'catblogs/images/icon1.jpg' %}">
 </head>
 <body>
@@ -14,7 +14,7 @@
     <header class="header">
         <div class="header-wrapper">
             <div class="logo">
-                <a href="/blogs">Every day is Caturday Blogs</a>
+                <a href="/">Every day is Caturday Blogs</a>
             </div>
 
             <div class="login">
@@ -39,6 +39,7 @@
                     {% if user.is_authenticated %}
                     <a href="{% url 'catblogs:catpost_my_posts' %}"><li>My posts</li></a>
                     {% endif %}
+                    <a href="/blogs"><li>All publications</li></a>
                     <a href="{% url 'catblogs:catpost_recent' %}"><li>Recent publications</li></a>
                     <a href="{% url 'catblogs:catpost_short' %}"><li>Short stories</li></a>
                     <a href="{% url 'catblogs:catpost_article' %}"><li>Serious articles</li></a>

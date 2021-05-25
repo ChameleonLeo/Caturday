@@ -4,8 +4,7 @@
 <head>
     <title>Polls</title>
     <meta charset="UTF-8">
-    <base href="/">
-    <link rel="stylesheet" href="{% static 'catpolls/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'catpolls/css/style.css' %}">
     <link rel="icon" type="image" href="{% static 'catpolls/images/icon1.jpg' %}">
 </head>
 <body>
@@ -13,13 +12,14 @@
     <header class="header">
         <div class="header-wrapper">
             <div class="logo">
-                <a href="/polls">Every day is <br>Caturday Polls</a>
+                <a href="/">Every day is <br>Caturday Polls</a>
             </div>
 
             <div class="nav-wrapper">
                 <nav class="nav">
                     <ul class="nav-ul">
                         <a href="{% url 'catpolls:popular' %}"><li>Popular polls</li></a>
+                        <a href="/polls"><li>All polls</li></a>
                         <a href="{% url 'catpolls:random' %}"><li>Random poll</li></a>
 
                     </ul>
