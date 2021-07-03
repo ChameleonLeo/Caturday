@@ -8,6 +8,10 @@ body, h1, h2, h3, h4, p, a {
   box-sizing: border-box;
 }
 
+::selection {
+  background: rgba(0, 50, 0, .6);
+}
+
 body {
   font-family: Arial, Helvetica, Verdana, sans-serif;
 }
@@ -48,7 +52,6 @@ body {
 .card {
   width: 350px;
   margin-bottom: 60px;
-  padding: 45px 45px;
   display: inline-block;
   box-shadow: 3px 3px 6px rgba(10, 10, 10, .4);
 }
@@ -60,8 +63,11 @@ body {
 }
 
 .card:hover a{
-  color: #059611;
-  text-decoration: underline;
+  color: fff;
+}
+
+.card-block {
+  margin: 45px 45px;
 }
 
 .card-title {

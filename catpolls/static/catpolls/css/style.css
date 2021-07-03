@@ -18,17 +18,22 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+::selection {
+  background: rgba(0, 50, 0, .6);
+}
 
 .header {
-background-color: steelblue;
-  height: 60px;
+  background-color: rgba(0, 0, 0, .8);
+  min-height: 70px;
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .header-wrapper {
   height: 100%;
+  width: 100%;
   display: flex;
-  flex-wrap: row wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -39,33 +44,43 @@ background-color: steelblue;
 }
 .logo a {
   text-decoration: none;
-  color: black;
-  font-size: 16px;
+  color: #fff;
+  font-size: 24px;
 }
 
 .login-wrapper{
-  min-width: 100px;
+  min-width: 156px;
   margin: 0 10px;
 }
 .login {
   float: right;
+}
+
+.user {
+  display: inline-block;
+  padding: 12px;
+  color: #fff;
+}
+.button {
+  display: inline-block;
+  padding: 9px 12px;
+  border-radius: 3px;
+  border: 1px solid #fff;
   font-size: 16px;
-  width: 70px;
-  min-height: 32px;
   text-align: center;
 }
-.login:hover {
-  background-color: lightblue;
+.button:hover {
+  background-color: rgba(0, 50, 0, .8);
 }
-.login:active {
-  background: white;
-  }
-.login p {
-  padding: 9px 0;
+.button:active {
+  background: #fff;
 }
-.login a {
+.button:active a {
+  color: #000;
+}
+.button a {
   text-decoration: none;
-  color: black;
+  color: #fff;
 }
 
 .nav-ul {
@@ -75,26 +90,24 @@ background-color: steelblue;
 }
 nav li {
   list-style-type: none;
-  padding: 10px;
+  padding: 20px;
   margin: 5px 0px;
-  border-right: 1px dashed #000;
-  border-left: 1px dashed #000;
 }
 .nav-ul a {
   text-decoration: none;
-  color: #000;
+  color: #fff;
   font-size: 16px;
 }
 .nav-ul a:hover {
-  color: lightblue;
+  background-color: rgba(0, 50, 0, .6);
 }
+
 
 .content-wrapper {
   max-width: 500px;
   display: flex;
   flex-flow: wrap;
   flex-direction: column;
-  /*justify-content: center;*/
 }
 
 /* polls list page */
@@ -102,8 +115,8 @@ nav li {
   display: block;
   float: center;
   margin: 30px auto;
-  max-height: 350px;
-  width: auto;
+  max-height: 400px;
+  max-width: 100%;
 }
 
 .question-list ul {
@@ -160,18 +173,23 @@ nav li {
   height: 30px;
 }
 
-.button input {
-  background-color: steelblue;
-  padding: 7px 11px;
-  margin: 20px 0;
+button {
   float: right;
+  padding: 9px 12px;
+  background-color: rgba(0, 0, 0, .8);
+  color: #fff;
+  border: 1px solid #000;
+  border-radius: 3px;
   font-size: 16px;
-  border: none;
+  text-align: center;
   cursor: pointer;
 }
-.button input:hover {
-  background-color: lightblue;
-  border: none;
+button:hover {
+  background-color: rgba(0, 50, 0, .8);
+}
+button:active {
+  background: #fff;
+  color: #000;
 }
 
 /* polls results page */
@@ -194,7 +212,8 @@ nav li {
 
 
 .footer {
-  background-color: #000;
+  width: 100%;
+  background-color: rgba(0, 50, 0, .8);
   color: #fff;
   width: 100%;
   height: 50px;

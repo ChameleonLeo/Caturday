@@ -8,10 +8,12 @@ body {
 }
 
 body {
-  color: white;
   margin: 0 auto;
   font-family: Arial, sans-serif;
   font-weight: normal;
+}
+::selection {
+  background: rgba(0, 50, 0, .6);
 }
 
 .body-wrapper {
@@ -23,19 +25,24 @@ body {
   justify-content: space-between;
   }
 
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.header-wrapper {
   background-color: rgba(0, 0, 0, .8);
   height: 70px;
+  display: flex;
+  justify-content: center;
+}
+.header {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .logo {
-  font-weight: bold;
   font-size: 24px;
   margin: 0;
-  margin-right: 200px;
+  min-width: 170px;
 }
 
 .button {
@@ -44,6 +51,7 @@ body {
   padding-top: 10px;
   box-sizing: border-box;
   border: 1px solid white;
+  border-radius: 3px;
   text-align: center;
   font-size: 14px;
   cursor: pointer;
@@ -84,7 +92,7 @@ a {
   display: block;
   margin: 0 auto;
   max-height: 350px;
-  width: auto;
+  max-width: 100%;
 }
 
 .tip {
@@ -98,6 +106,7 @@ a {
 }
 
 footer {
+color: #fff;
   height: 50px;
   background-color: rgba(0, 50, 0, .8);
   width: 100%;
