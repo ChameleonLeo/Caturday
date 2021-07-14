@@ -1,29 +1,29 @@
-{% extends "general/main.html" %}
+{% extends "accounts/main.html" %}
 
 {% block content %}
     <div class="err">
     {% if form.errors %}
         <div class="mess">
-            <p>Your username or password didn't match. Please, try again.</p>
+            <p class="err">Your username or password didn't match. Please, try again.</p>
         </div>
     {% endif %}
 
     {% if next %}
         {% if user.is_authenticated %}
         <div class="mess">
-            <p class="mess">Your account doesn't have access to this page. To proceed,
+            <p class="err">Your account doesn't have access to this page.<br>To proceed,
           please login with an account that has access.</p>
         </div>
         {% else %}
         <div class="mess">
-            <p class="mess">Please login to see this page.</p>
+            <p class="mess">Please, enter your login and password:</p>
         </div>
         {% endif %}
     {% endif %}
     </div>
 
     <div class="form">
-        <form method="post" action="{% url 'login' %}">
+        <form method="post" action="{% url 'accounts:login' %}">
             {% csrf_token %}
             <table>
                 <tr>
@@ -35,9 +35,10 @@
                     <td>{{ form.password }}</td>
                 </tr>
             </table>
-            {# Assumes you setup the password_reset view in your URLconf #}
+
             <div class="mess2">
-                <a href="{% url 'password_reset' %}">Lost password?</a>
+                <a href="{% url 'accounts:password_reset' %}">Lost password?</a><br>
+                <a href="{% url 'accounts:register' %}">Registration</a>
             </div>
             <div class="but-wrap">
                 <input class="button" type="submit" value="Log in" />
@@ -45,6 +46,5 @@
             </div>
         </form>
     </div>
-
 
 {% endblock %}

@@ -6,7 +6,7 @@
         {% for catpost in catposts %}
             <div class="post">
                 <h2><a href="{% url 'catblogs:catpost_detail' pk=catpost.pk %}">{{ catpost.catitle }}</a></h2>
-                <p class="post-text">{{ catpost.catext|linebreaksbr }}</p>
+                <p class="post-text">{{ catpost.catext|truncatewords:90|linebreaksbr }}</p>
                 <p class="auth-date">Author: {{ catpost.catauthor }}. Published: {{ catpost.publication_date }} </p>
                 <hr>
             </div>

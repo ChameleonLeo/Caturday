@@ -1,0 +1,16 @@
+{% extends "accounts/main.html" %}
+
+{% block content %}
+    <div class="mess">
+        <h2>Edition of profile</h2>
+        <p>You can edit your profile using the following form:</p>
+        <form action="." method="post">
+            {{ user_form.as_p }}
+            {{ profile_form.as_p }}
+            {% csrf_token %}
+            <div class="but-wrap">
+                <input class="button" type="submit" value="Save changes">
+            </div>
+        </form>
+    </div>
+{% endblock %}

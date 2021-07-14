@@ -17,10 +17,11 @@
 
             <div class="login">
                 {% if not user.is_authenticated %}
-                <div class="button"><a href="/accounts/login?next={{request.path}}">Log in</a></div>
+                <div class="reglink"><a href="{% url 'accounts:register' %}">Registration</a></div>
+                <a class="log-but" href="{% url 'accounts:login' %}?next={{request.path}}"><div class="button">Log in</div></a>
                 {% elif user.is_authenticated %}
-                <div class="user">{{ user.get_username }}</div>
-                <div class="button"><a href="/accounts/logout">Log out</a></div>
+                <div class="user"><a href="{% url 'accounts:get_profile' %}">{{ user.get_username }}</a></div>
+                <a class="log-but" href="{% url 'accounts:logout' %}"><div class="button">Log out</div></a>
                 {% endif %}
             </div>
         </div>
