@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Profile
 from .forms import UserRegistrationForm, UserEditForm, ProfileEditForm
@@ -14,10 +14,9 @@ def register(request):
             new_user.set_password(user_form.cleaned_data['password'])
             # Save the User object
             new_user.save()
-            profile = Profile.objects.create(user=new_user)
+            Profile.objects.create(user=new_user)
             return render(request, 'accounts/register_done.html',
-                          {'new_user': new_user,
-                           'profile': profile})
+                          {'new_user': new_user})
     else:
         user_form = UserRegistrationForm()
     return render(request, 'accounts/register.html', {'user_form': user_form})
