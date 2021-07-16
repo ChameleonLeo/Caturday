@@ -2,7 +2,7 @@
 *.bak
 
 # Database
-#*.sqlite3
+*.sqlite3
 
 # Environment ignored files
 */.env
@@ -12,3 +12,6 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+
+# other
+ch-auth.txt
