@@ -1,6 +1,15 @@
 {% extends "accounts/main.html" %}
 
 {% block content %}
-    <h1>Welcome, {{ new_user.first_name }}!</h1>
-    <p>Your account has been successfully created. Now you can <a href="{% url 'accounts:login' %}">log in.</a></p>
+    <h2>Welcome,
+        {% if new_user.first_name %}
+            {{ new_user.first_name }}!
+        {% else %}
+            {{ new_user.username }}!
+        {% endif %}
+    </h2>
+    <p><br>Your account has been successfully created.</p>
+    <div class="but-wrap">
+        <a class="log-but" href="{% url 'accounts:login' %}"><div class="button">Log in</div></a>
+    </div>
 {% endblock %}

@@ -9,11 +9,14 @@ class CachoiceInline(admin.TabularInline):
 
 class CatuestionAdmin(admin.ModelAdmin):
     fieldsets = [
-            ('Date information', {'fields': ['publication_date'], 'classes': ['collapse']}),
-            (None, {'fields': ['catuestion_text']}),
-            ]
+            ('Date information', {'fields': ['publication_date'],
+                                  'classes': ['collapse']}),
+            (None, {'fields': ['catuestion_text']})]
     inlines = [CachoiceInline]
-    list_display = ('catuestion_text', 'publication_date', 'catuestion_image', 'was_published_recently')
+    list_display = ('catuestion_text',
+                    'publication_date',
+                    'catuestion_image',
+                    'was_published_recently')
     list_filter = ['publication_date']
     search_fileds = ['catuestion_text']
 

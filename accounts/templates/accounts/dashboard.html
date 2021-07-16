@@ -1,9 +1,0 @@
-{% extends "accounts/main.html" %}
-
-{% block content %}
-    <div class="mess">
-        <h2>Dashboard for user {{ user }}</h2>
-        <p>Welcome to your dashboard!<br>Here you can <a href="{% url 'accounts:edit_profile' %}">edit your profile</a>
-            or <a href="{% url 'accounts:password_change' %}">change password.</a></p>
-    </div>
-{% endblock %}

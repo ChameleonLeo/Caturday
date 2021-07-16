@@ -5,8 +5,18 @@
         <h2>Edition of profile</h2>
         <p>You can edit your profile using the following form:</p>
         <form action="." method="post">
-            {{ user_form.as_p }}
-            {{ profile_form.as_p }}
+            <table>
+                <tr><td>{{ user_form.first_name.label_tag }}
+                    <br>{{ user_form.first_name }}</td></tr>
+                <tr><td>{{ user_form.last_name.label_tag }}
+                    <br>{{ user_form.last_name }}</td></tr>
+                <tr><td>{{ user_form.email.label_tag }}
+                    <br>{{ user_form.email }}</td></tr>
+                <tr><td>{{ profile_form.date_of_birth.label_tag }}
+                    <br>{{ profile_form.date_of_birth }}</td></tr>
+                <tr><td>{{ profile_form.info.label_tag }}
+                    <br>{{ profile_form.info }}</td></tr>
+            </table>
             {% csrf_token %}
             <div class="but-wrap">
                 <input class="button" type="submit" value="Save changes">

@@ -1,50 +1,53 @@
 {% extends "accounts/main.html" %}
 
 {% block content %}
+    <h2>Create an account</h2>
     <div class="mess">
-        <h2>Create an account</h2>
         <p>Please, sign up using the following form:</p>
-        <form action="." method="post">
-            {% if user_form.username.errors %}
-            <div class="err">{{ user_form.username.errors }}</div>
-            {% endif %}
-            {% if user_form.first_name.errors %}
-            <div class="err">{{ user_form.first_name.errors }}</div>
-            {% endif %}
-            {% if user_form.email.errors %}
-            <div class="err">{{ user_form.email.errors }}</div>
-            {% endif %}
-            {% if user_form.password.errors %}
-            <div class="err">{{ user_form.password.errors }}</div>
-            {% endif %}
-            <table>
-                <tr>
-                    <td>* {{ user_form.username.label_tag }}<br>{{ user_form.username }}
-                        <br>{{ user_form.username.help_text|safe }}</td>
-                </tr>
-                <tr>
-                    <td>{{ user_form.first_name.label_tag }}<br>{{ user_form.first_name }}</td>
-                </tr>
-                <tr>
-                    <td>{{ user_form.last_name.label_tag }}<br>{{ user_form.last_name }}</td>
-                </tr>
-                <tr>
-                    <td>* {{ user_form.email.label_tag }}<br>{{ user_form.email }}</td>
-                </tr>
-                <tr>
-                    <td>* {{ user_form.password.label_tag }}<br>{{ user_form.password }}</td>
-                </tr>
-                <tr>
-                    <td>* {{ user_form.password2.label_tag }}<br>{{ user_form.password2 }}</td>
-                </tr>
-                <tr>
-                    <td>* Required fields.</td>
-                </tr>
-            </table>
-            {% csrf_token %}
-            <div class="but-wrap">
-                <input class="button" type="submit" value="Create account" />
-            </div>
-        </form>
     </div>
+    <form action="." method="post">
+        <div class="mess">
+            {% if user_form.errors %}
+                {{ user_form.username.errors }}
+                {{ user_form.first_name.errors }}
+                {{ user_form.email.errors }}
+                {{ user_form.password.errors }}
+                {{ user_form.password2.errors }}
+            {% endif %}
+        </div>
+        <table>
+            <tr>
+                <td colspan="2">Username should contain {{ user_form.username.help_text|safe|linebreaksbr }}<br>
+                With '*' are marked required fields.</td>
+            </tr>
+            <tr>
+                <td>* {{ user_form.username.label_tag }}</td>
+                <td>{{ user_form.username }}</td>
+            </tr>
+            <tr>
+                <td>{{ user_form.first_name.label_tag }}</td>
+                <td>{{ user_form.first_name }}</td>
+            </tr>
+            <tr>
+                <td>{{ user_form.last_name.label_tag }}</td>
+                <td>{{ user_form.last_name }}</td>
+            </tr>
+            <tr>
+                <td>* {{ user_form.email.label_tag }}</td>
+                <td>{{ user_form.email }}</td>
+            </tr>
+            <tr>
+                <td>* {{ user_form.password.label_tag }}</td>
+                <td>{{ user_form.password }}</td>
+            </tr>
+            <tr>
+                <td>* {{ user_form.password2.label_tag }}</td>
+                <td>{{ user_form.password2 }}</td>
+            </tr>
+        </table>
+        {% csrf_token %}
+        <div class="but-wrap">
+            <input class="button" type="submit" value="Create account" />
+        </div>
+    </form>
 {% endblock %}

@@ -10,7 +10,12 @@
 <div class="body-wrapper">
     <div id="header">
         <div class="branding">
-          <h1><a href="/">Every day is Caturday</a></h1>
+          <a href="/">Every day is Caturday</a>
+        </div>
+        <div class="logout">
+            {% if user.is_authenticated %}
+            <a class="log-but" href="{% url 'accounts:logout' %}"><div class="butout">Log out</div></a>
+            {% endif %}
         </div>
     </div>
     <div id="main">

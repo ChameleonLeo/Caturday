@@ -87,20 +87,56 @@ a.button {
   padding: 20px 0;
   background: rgba(0, 50, 0, .8);
   color: #fff;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.branding h1 {
-  padding: 0 10px;
-  font-size: 24px;
+.branding {
+  padding: 0 20px;
+  display: inline-block;
 }
 .branding a {
   color: #fff;
   text-decoration: none;
+  font-size: 24px;
+}
+.logout {
+  padding-right: 30px;
+}
+.log-but {
+  text-decoration: none;
+  color: #fff;
+}
+.butout {
+  float: right;
+  display: inline-block;
+  padding: 8px 12px 9px;
+  border-radius: 3px;
+  border: 1px solid #fff;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, .8);
+}
+.butout:hover {
+  background: #fff;
+}
+.log-but:hover {
+  color: #000;
+}
+.butout:active {
+  background: #000;
+}
+.log-but:active {
+  color: #fff;
 }
 
 #main {
   border: 1px solid rgba(0, 50, 0, .8);
   border-radius: 10px;
   background-color: rgba(0, 50, 0, .2);
+  margin: 40px;
 }
 .content {
   padding: 20px 40px;
@@ -113,6 +149,13 @@ a.button {
   font-size: 14px;
   padding: 10px 0;
 }
+.err {
+  color: red;
+}
+.errorlist {
+  color: red;
+  margin: 15px 25px;
+}
 .but-wrap {
   display: inline-block;
   float: right;
@@ -121,7 +164,7 @@ a.button {
 .but-wrap2 {
   display: inline-block;
   float: left;
-  padding-top: 10px;
+  padding: 10px 20px 0 0;
 }
 
 .mess2 {

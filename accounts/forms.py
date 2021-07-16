@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from .models import Profile
+from django.utils.translation import gettext_lazy as _
 
 
 class UserRegistrationForm(forms.ModelForm):
@@ -28,3 +29,7 @@ class ProfileEditForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ('date_of_birth', 'info')
+        labels = {'info': _("Motto")}
+        widgets = {'date_of_birth': forms.SelectDateWidget(
+            empty_label=("Year", "Month", "Day"),
+            years=range(2020, 1950, -1))}

@@ -1,23 +1,17 @@
 {% extends "accounts/main.html" %}
 
 {% block content %}
-    <div class="err">
+    <div class="mess">
     {% if form.errors %}
-        <div class="mess">
-            <p class="err">Your username or password didn't match. Please, try again.</p>
-        </div>
+            <p class="err">Username and password don't match. Please, try again.</p>
     {% endif %}
 
     {% if next %}
         {% if user.is_authenticated %}
-        <div class="mess">
-            <p class="err">Your account doesn't have access to this page.<br>To proceed,
-          please login with an account that has access.</p>
-        </div>
+            <p class="err">Your account doesn't have access to this page.
+                <br>To proceed, please login with an account that has access.</p>
         {% else %}
-        <div class="mess">
-            <p class="mess">Please, enter your login and password:</p>
-        </div>
+            <p>Please, enter your login and password:</p>
         {% endif %}
     {% endif %}
     </div>
@@ -26,14 +20,10 @@
         <form method="post" action="{% url 'accounts:login' %}">
             {% csrf_token %}
             <table>
-                <tr>
-                    <td>{{ form.username.label_tag }}</td>
-                    <td>{{ form.username }}</td>
-                </tr>
-                <tr>
-                    <td>{{ form.password.label_tag }}</td>
-                    <td>{{ form.password }}</td>
-                </tr>
+                <tr><td>{{ form.username.label_tag }}</td>
+                    <td>{{ form.username }}</td></tr>
+                <tr><td>{{ form.password.label_tag }}</td>
+                    <td>{{ form.password }}</td></tr>
             </table>
 
             <div class="mess2">
