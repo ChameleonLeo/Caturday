@@ -1,9 +1,3 @@
-# Text backup files
-*.bak
-
-# Database
-*.sqlite3
-
 # Environment ignored files
 */.env
 */.venv
@@ -15,3 +9,75 @@ venv.bak/
 
 # Pycharm
 .idea/*
+*.iws /out/ 
+
+# Django #
+*.log
+*.pot
+*.pyc
+__pycache__
+staticfiles/*
+
+# DBs
+data/*
+db.sqlite3
+
+# Backup files # 
+*.bak 
+
+# Python # 
+*.py[cod] 
+*$py.class 
+
+# Distribution / packaging 
+.Python build/ 
+develop-eggs/ 
+dist/ 
+downloads/ 
+eggs/ 
+.eggs/ 
+lib/ 
+lib64/ 
+parts/ 
+sdist/ 
+var/ 
+wheels/ 
+*.egg-info/ 
+.installed.cfg 
+*.egg 
+*.manifest 
+*.spec 
+
+# Installer logs 
+pip-log.txt 
+pip-delete-this-directory.txt 
+
+# Unit test / coverage reports 
+htmlcov/ 
+.tox/ 
+.coverage 
+.coverage.* 
+.cache 
+.pytest_cache/ 
+nosetests.xml 
+coverage.xml 
+*.cover 
+.hypothesis/ 
+
+# Jupyter Notebook 
+.ipynb_checkpoints 
+
+# pyenv 
+.python-version 
+
+# celery 
+celerybeat-schedule.* 
+
+# SageMath parsed files 
+*.sage.py 
+
+# mkdocs documentation 
+/site 
+
+# mypy 
+.mypy_cache/
